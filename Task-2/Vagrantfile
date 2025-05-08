@@ -1,0 +1,37 @@
+Vagrant.configure("2") do |config|
+    #vm_count = ENV['VM_COUNT'] ? ENV['VM_COUNT'].to_i : 3
+    (1..2).each do |i|
+        config.vm.define "VM#{i}" do |vm|
+            vm.vm.box = "ubuntu/bionic64"
+            vm.vm.hostname = "sftp-server-#{i}"
+            vm.vm.network "private_network", ip: "192.168.33.#{i}0"
+            vm.vm.provider "virtualbox" do |vb|
+                vb.gui = false
+                vb.name = "sftp-server-#{i}"
+                vb.memory = "2048"
+                vb.cpus = "2"
+            end
+            vm.vm.provision "shell", path: "basic-setup.sh"
+            vm.vm.provision "shell" do |sftp|
+                sftp.inline = <<-SFTP
+                    cp /vagrant/Keys/peers.conf /home/vagrant/peers.conf
+                SFTP
+            end    
+            vm.vm.provision "shell" do |sftp|
+                sftp.inline = <<-SFTP
+                    cp /vagrant/send-logs.sh /home/vagrant/send-logs.sh
+                    chmod +x /home/vagrant/send-logs.sh
+                    chown vagrant:vagrant /home/vagrant/send-logs.sh
+                  
+                    CRON_JOB="*/5 * * * * /home/vagrant/send-logs.sh >> /home/vagrant/send-logs.log 2>&1"
+                  
+                    crontab -l 2>/dev/null | grep -F "$CRON_JOB" > /dev/null
+                    if [ $? -ne 0 ]; then
+                        (crontab -l 2>/dev/null; echo "$CRON_JOB") | crontab -
+                    fi
+                SFTP
+            end 
+        end
+    end
+end
+  
