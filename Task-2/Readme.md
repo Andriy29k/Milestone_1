@@ -12,6 +12,7 @@ This pet project contain 3 SFTP servers, which communicate each other by log fil
 
 - Python >= 3.9
 - Vagrant
+- Oracle VirtualBox
 
 ### Environment variables setup and IP setting
 
@@ -57,17 +58,17 @@ IP ADRESSESS
    Go to application URL in browser. You should see main page with 6 buttons, which can redirect us to another routes.
    
     "URL:PORT/upload" - you can not see this route, because it is endpoint that receive logs and put to db.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/logs" - it is a list of all logs, it prefer for small debuging.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/stats" - stats of sended logs by VM's.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/latest" - displays latest log received from someone VM.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/debug-log" - endpoint to receive log fro VM. This a log of script executions.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/debug-view" - script execution log output.
-    ---------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------
     "URL:PORT/graph" - contain graphs based on logs statistic.
 
 ## License

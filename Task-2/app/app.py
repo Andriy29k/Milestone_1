@@ -5,14 +5,17 @@ import os
 from collections import defaultdict
 from flask import render_template_string, request
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
 
-APP_IP="192.168.0.101"
-APP_PORT="5000"
+load_dotenv()
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+APP_IP = os.getenv("APP_IP")
+APP_PORT = os.getenv("APP_PORT")
+MONGO_URI = os.getenv("MONGO_URI")
+
 client = MongoClient(MONGO_URI)
 db = client.logsdb
 collection = db.logs
@@ -59,7 +62,6 @@ def get_logs():
     if not logs:
         return render_template_string(base_template, content="<p>No logs available.</p>")
 
-    # Заголовки — з ключів першого запису
     headers = logs[0].keys()
     table_html = "<h2>All Logs</h2><div class='table-responsive'><table class='table table-striped table-bordered'><thead><tr>"
     for header in headers:
@@ -91,7 +93,7 @@ def stats():
 
     output = {host: dict(peers) for host, peers in result.items()}
 
-    # Створюємо HTML-таблицю
+    # Table generation
     table_html = "<h2>Log Stats by Host</h2><table class='table table-bordered w-auto'><thead><tr><th>Hostname</th><th>Peer IP</th><th>Count</th></tr></thead><tbody>"
     for host, peers in output.items():
         for peer, count in peers.items():
@@ -131,7 +133,7 @@ def debug_log():
     file.save(path)
     return jsonify({"status": "debug log saved", "filename": filename})
 
-#Debug log page
+#Debug log output
 @app.route("/debug-view")
 def debug_view():
     folder = "debug_logs"
@@ -194,8 +196,7 @@ def debug_view():
     </style>
     """ + entries_html)
 
-
-#Graph page
+#Graphs
 @app.route("/graph")
 def graph():
     start = request.args.get("start")
@@ -320,8 +321,8 @@ def graph():
          host_labels=host_labels, host_counts=host_counts,
          start_dt=start_dt, end_dt=end_dt, request=request)
 
-#Main page with routes to another pages
-@app.route("/")
+
+@app.route("/dashboard")
 def dashboard():
     return render_template_string("""
     <!DOCTYPE html>
@@ -346,7 +347,7 @@ def dashboard():
     </html>
     """)
 
-#Base template for rendering
+
 base_template = """
 <!DOCTYPE html>
 <html>
