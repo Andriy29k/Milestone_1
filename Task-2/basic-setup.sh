@@ -1,10 +1,12 @@
 #!/bin/bash
 
 #Update and install packages
-sudo DEBIAN_FRONTEND=noninteractive apt-get install postfix -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get install postfix curl -y
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install rkhunter openssh-server dos2unix -y
+rkhunter --propupd
+rkhunter --check
 
 #Configure SSH
 cat /vagrant/Keys/authorized_keys >> /home/vagrant/.ssh/authorized_keys
