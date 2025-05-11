@@ -13,7 +13,7 @@ git clone https://github.com/Andriy29k/Milestone_1.git
 cd Task2
 ```
 2. On this step need to configure **IP-addresses** and **Environment Variables**. **IP Adresses** located at: **"Keys/peers.conf"**, also in this file placed and commendet **URL to python app**. This **URL** must be commented, in script we give value by grep with regex. VM_COUNT
-: It is variable that determine VM's count in infrasctructure. How add Environment Variable at Windows look this: [Environment Variables in Windows] (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5)
+: It is variable that determine VM's count in infrasctructure. How add Environment Variable at Windows look this: [Environment_Variables_on_Windows] (https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5)
 
 3. Paste next command: `Vagrant up`
 4. Run python script via command:
