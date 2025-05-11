@@ -1,27 +1,76 @@
 # Monitoring System
 
-# How it is works...
+> DevOps internship task
 
-1. Vagrant deploy **3 SFTP servers** with basic setups for SFTP and user management, and doing **RKhunter audit**. Then run **send-logs.sh** script, that generate and put file to neighbour's servers. This script runs every 5 minutes.
-2. We run python script that deploy python application. Python app receive logs by **HTTP** on one of endpoint and put to **MongoDB**. From this moment we can operate, visualize and display data's in needed view.
+## Introduction
 
-# Definition
+This pet project contain 3 SFTP servers, which communicate each other by log files(for example SFTP-server-1 send logs to SFTP-server-2,3) and send logs to python-Flask application endpoint, finally application put logs to MongoDB and operate, visualize logs and statistic.
 
-VM_COUNT:
- It is variable that determine VM's count in infrasctructure. How add Environment Variable at Windows look this: [Environment Variables on Windows](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5)
+## Getting Started
 
-## Setup
+### Prerequisites
 
-1. Open your terminal and paste next command:
-```
-git clone https://github.com/Andriy29k/Milestone_1.git
-cd Task2
-```
-2. On this step need to configure **IP-addresses** and **Environment Variables**. **IP Adresses** located at: **"Keys/peers.conf"**, also in this file placed and commendet **URL to python app**. This **URL** must be commented, in script we give value by grep with regex. 
+- Python >= 3.9
+- Vagrant
 
-3. Paste next command to terminal: `Vagrant up` and wait while infrastructure will deployed.
-4. Run python script via command:
-```
-.venv/Scripts/python.exe app/app.py
-```
-5. Go to **"localhost:(Your port or 5000(by default))"** and you will see main page.
+### Environment variables setup and IP setting
+
+Create environment variable VM_COUNT. [Windows](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5) | [Linux](https://www.freecodecamp.org/news/how-to-set-an-environment-variable-in-linux/)
+
+VM_COUNT
+ :determine virtual machines count for deploying.  
+
+IP ADRESSESS
+ :you can setup your own ip addresses by doing changes in /Keys/peers.conf file. But commented line should be commented, in script from this line parse by grep URL to python app. Also, if you change python URL, you need to write this URL to app/.env file.
+
+### Deploying infrastructure
+
+    $ git clone https://github.com/Andriy29k/Milestone_1.git
+    $ cd Task2
+    $ vagrant up
+    
+### Python application deploy
+
+   Windows
+    
+     $ python -m venv /path/to/python/application/app/
+    
+    CMD 
+     $ venv\Scripts\activate.bat
+     $ pip install -r requirements.txt
+     $ & path/to/venv/.venv/Scripts/python.exe path/to/app/app.py
+    
+    PowerShell
+     $ venv\Scripts\Activate.ps1
+     $ pip install -r requirements.txt
+     $ & path/to/venv/.venv/Scripts/python.exe path/to/app/app.py
+      
+   Linux
+
+    $ sudo apt install python3-venv
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ venv
+
+### Usage
+
+   Go to application URL in browser. You should see main page with 6 buttons, which can redirect us to another routes.
+   
+    "URL:PORT/upload" - you can not see this route, because it is endpoint that receive logs and put to db.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/logs" - it is a list of all logs, it prefer for small debuging.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/stats" - stats of sended logs by VM's.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/latest" - displays latest log received from someone VM.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/debug-log" - endpoint to receive log fro VM. This a log of script executions.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/debug-view" - script execution log output.
+    ---------------------------------------------------------------------------------------------
+    "URL:PORT/graph" - contain graphs based on logs statistic.
+
+## License
+
+This software is licensed under the [GNU General Public License, version 3](
+./LICENSE).
