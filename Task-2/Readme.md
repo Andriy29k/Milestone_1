@@ -10,9 +10,11 @@ This pet project contain 3 SFTP servers, which communicate each other by log fil
 
 ### Prerequisites
 
-- Python >= 3.9
+- Python 3.8+
 - Vagrant
 - Oracle VirtualBox
+- MongoDB(Local or Docker)
+- Git(optional)
 
 ### Environment variables setup and IP setting
 
@@ -34,24 +36,24 @@ IP ADRESSESS
 
    Windows
     
-     $ python -m venv /path/to/python/application/app/
+     $ python -m venv .venv
     
     CMD 
-     $ venv\Scripts\activate.bat
+     $ .venv\Scripts\activate
      $ pip install -r requirements.txt
-     $ & path/to/venv/.venv/Scripts/python.exe path/to/app/app.py
+     $ python app.py
     
     PowerShell
-     $ venv\Scripts\Activate.ps1
+     $ .\.venv\Scripts\Activate.ps1
      $ pip install -r requirements.txt
-     $ & path/to/venv/.venv/Scripts/python.exe path/to/app/app.py
+     $ python app.py
       
    Linux
 
     $ sudo apt install python3-venv
-    $ python3 -m venv venv
-    $ source venv/bin/activate
-    $ venv
+    $ python3 -m venv .venv
+    $ source .venv/bin/activate
+    $ pip install -r requirements.txt
 
 ### Usage
 

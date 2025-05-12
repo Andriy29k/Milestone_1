@@ -5,25 +5,20 @@ import os
 from collections import defaultdict
 from flask import render_template_string, request
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
-
 
 app = Flask(__name__)
 
-load_dotenv()
 
-APP_IP = os.getenv("APP_IP")
-APP_PORT = os.getenv("APP_PORT")
-MONGO_URI = os.getenv("MONGO_URI")
+#APP_IP = os.getenv("APP_IP")
+#APP_PORT = os.getenv("APP_PORT")
+#MONGO_URL = os.getenv("MONGO_URL")
+APP_IP = "192.168.31.89"
+APP_PORT = "5000"
+MONGO_URL = "mongodb://localhost:27017/"
 
-client = MongoClient(MONGO_URI)
+client = MongoClient(MONGO_URL)
 db = client.logsdb
 collection = db.logs
-
-#Test main page
-@app.route("/")
-def index():
-    return "Main page"
 
 #Endpoint to download the logs
 @app.route("/upload", methods=["POST"])
@@ -322,13 +317,13 @@ def graph():
          start_dt=start_dt, end_dt=end_dt, request=request)
 
 
-@app.route("/dashboard")
+@app.route("/")
 def dashboard():
     return render_template_string("""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Log Dashboard</title>
+        <title>Main page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body class="p-4">
@@ -359,7 +354,7 @@ base_template = """
     <div class="container">
         <h1 class="mb-4">Log Dashboard</h1>
         <nav class="mb-4">
-            <a href="/dashboard" class="btn btn-outline-dark btn-sm">Dashboard</a>
+            <a href="/" class="btn btn-outline-dark btn-sm">Dashboard</a>
             <a href="/logs" class="btn btn-outline-primary btn-sm">/logs</a>
             <a href="/stats" class="btn btn-outline-secondary btn-sm">/stats</a>
             <a href="/latest" class="btn btn-outline-success btn-sm">/latest</a>
@@ -376,4 +371,5 @@ base_template = """
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host=APP_IP, port=APP_PORT)
+    app.run(debug=False, host=APP_IP, port=int(APP_PORT))
+
