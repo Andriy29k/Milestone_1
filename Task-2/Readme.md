@@ -20,11 +20,11 @@ This pet project contain 3 SFTP servers, which communicate each other by log fil
 
 Create environment variable VM_COUNT. [Windows](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5) | [Linux](https://www.freecodecamp.org/news/how-to-set-an-environment-variable-in-linux/)
 
-VM_COUNT
- :determine virtual machines count for deploying.  
+VM_COUNT:
+  determine virtual machines count for deploying.  
 
-IP ADRESSESS
- :you can setup your own ip addresses by doing changes in /Keys/peers.conf file. But commented line should be commented, in script from this line parse by grep URL to python app. Also, if you change python URL, you need to write this URL to app/.env file.
+IP ADRESSESS:
+   you can setup your own ip addresses by doing changes in /Keys/peers.conf file. But commented line should be commented, in script from this line parse by grep URL to python app. Also, if you change python URL, you need to write this URL to app/.env file.
 
 ### Deploying infrastructure
 
