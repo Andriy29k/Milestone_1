@@ -4,4 +4,5 @@
 ## Features
 
 - [x] Jira integration to Git
-- [x] Parsing .log file with bash  
+- [x] Parsing .log file with bash
+- [x] Log monitoring system 
