@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  flask-app:
+    build:
+      context: ./app
+    ports:
+      - "5000:5000"
+    environment:
+      APP_IP: 0.0.0.0
+      APP_PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/
+    depends_on:
+      - mongo
+    volumes:
+      - ./debug_logs:/app/debug_logs
+    networks:
+      - lognet
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - lognet
+
+  sftp1:
+    build:
+      context: ./sftp
+    container_name: sftp-server-1
+    hostname: sftp-server-1
+    ports:
+      - "2221:22"
+    networks:
+      - lognet
+    volumes:
+      - sftp_logs:/var/log
+
+  sftp2:
+    build:
+      context: ./sftp
+    container_name: sftp-server-2
+    hostname: sftp-server-2
+    ports:
+      - "2222:22"
+    networks:
+      - lognet
+    volumes:
+      - sftp_logs:/var/log
+
+  sftp3:
+    build:
+      context: ./sftp
+    container_name: sftp-server-3
+    hostname: sftp-server-3
+    ports:
+      - "2223:22"
+    networks:
+      - lognet
+    volumes:
+      - sftp_logs:/var/log
+
+networks:
+  lognet:
+    driver: bridge
+
+volumes:
+  sftp_logs:
+  mongo_data:

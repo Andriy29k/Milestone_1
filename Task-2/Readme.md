@@ -10,11 +10,15 @@ This pet project contain 3 SFTP servers, which communicate each other by log fil
 
 ### Prerequisites
 
-- Python 3.8+
+> Deploy with Vagrant:
+- Python 3.12+
 - Vagrant
 - Oracle VirtualBox
 - MongoDB(Local or Docker)
 - Git(optional)
+
+> Deploy with Docker:
+- Docker
 
 ### Environment variables setup and IP setting
 
@@ -26,7 +30,8 @@ VM_COUNT:
 IP ADRESSESS:
    you can setup your own ip addresses by doing changes in /Keys/peers.conf file. But commented line should be commented, in script from this line parse by grep URL to python app. Also, if you change python URL, you need to write this URL to app/.env file.
 
-### Deploying infrastructure
+# Deploying with Vagrant
+### Deploying infrastructure 
 
     $ git clone https://github.com/Andriy29k/Milestone_1.git
     $ cd Task2
@@ -55,6 +60,13 @@ IP ADRESSESS:
     $ source .venv/bin/activate
     $ pip install -r requirements.txt
 
+# Deploying with Docker
+### Deploying infrastructure
+
+    $ git clone https://github.com/Andriy29k/Milestone_1.git
+    $ cd Task2/Dockerized
+    $ docker-compose up --build
+    
 ### Usage
 
    Go to application URL in browser. You should see main page with 6 buttons, which can redirect us to another routes.
