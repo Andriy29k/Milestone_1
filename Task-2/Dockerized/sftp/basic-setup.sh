@@ -9,7 +9,7 @@ rkhunter --propupd
 rkhunter --check
 
 #Configure SSH
-cat /vagrant/Keys/authorized_keys >> /home/vagrant/.ssh/authorized_keys
+cat /usr/local/bin/authorized_keys >> /home/sftp/.ssh/authorized_keys
 cat /vagrant/Keys/private-key > /home/vagrant/.ssh/ed25519
 sudo chown vagrant:vagrant /home/vagrant/.ssh/ed25519
 sudo chmod 600 /home/vagrant/.ssh/ed25519

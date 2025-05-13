@@ -10,23 +10,34 @@ HOSTNAME=$(hostname)
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M")
 
 LOCAL_IP=$(hostname -I | awk '{print $2}')
+HOST_API=$(grep '^#HOST_API=' /home/vagrant/peers.conf | cut -d '=' -f2-)
+FLASK_ENDPOINT="$HOST_API/upload"
+FLASK_ENDPOINT_DEBUG="$HOST_API/debug-log"
+
 
 for PEER in $PEERS; do
     LOG_FILE=$(mktemp)
     echo "$TIMESTAMP $HOSTNAME $LOCAL_IP $PEER" > "$LOG_FILE"
+    LOG_NAME="${HOSTNAME}-${TIMESTAMP}.log"
 
     echo "Transfer to: $PEER"
 
-    #If its local ip then copy to local directory
     if [[ "$PEER" == "$LOCAL_IP" ]]; then
-        echo "Local: $LOCAL_UPLOAD_DIR/$HOSTNAME-$TIMESTAMP.log"
-        cp "$LOG_FILE" "$LOCAL_UPLOAD_DIR/$HOSTNAME-$TIMESTAMP.log"
-    #Sending to another VM's
+        echo "Local: $LOCAL_UPLOAD_DIR/$LOG_NAME"
+        cp "$LOG_FILE" "$LOCAL_UPLOAD_DIR/$LOG_NAME"
     else
-        sftp -i "$KEY_PATH" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SFTP_USER@$PEER" <<EOF
+         sftp -i "$KEY_PATH" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null "$SFTP_USER@$PEER" <<EOF
 put "$LOG_FILE" "/$REMOTE_UPLOAD_DIR/$HOSTNAME-$TIMESTAMP.log"
 bye
 EOF
-    rm -f "$LOG_FILE"
+        echo "Uploading log to Flask..."
+        curl -X POST -F "file=@$LOG_FILE" -F "filename=$LOG_NAME" "$FLASK_ENDPOINT"
+        curl -X POST \
+        -F "file=@/home/vagrant/send-logs.log" \
+        -F "filename=${HOSTNAME}-send-logs.log" \
+        "$FLASK_ENDPOINT_DEBUG"
+    
     fi
+
+    rm -f "$LOG_FILE"
 done
