@@ -3,21 +3,17 @@ from pymongo import MongoClient
 from datetime import datetime
 import os
 from collections import defaultdict
-from flask import render_template_string
+from flask import render_template_string, request
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
 
 app = Flask(__name__)
-load_dotenv()
 
-APP_IP = os.getenv("APP_IP", "0.0.0.0")
-APP_PORT = os.getenv("APP_PORT", "5000")
-MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017/")
-
+MONGO_URL = "mongodb://mongo:27017/"
 
 client = MongoClient(MONGO_URL)
 db = client.logsdb
 collection = db.logs
+
 
 #Endpoint to download the logs
 @app.route("/upload", methods=["POST"])
@@ -263,7 +259,7 @@ def graph():
         </div>
     </div>
 
-    <h5 class="mt-5">Logs Count by Host</h5>
+    <h5 class="mt-5">6Logs Count by Host</h5>
     <div class="d-flex justify-content-center mb-5">
         <div style="width: 900px; height: 600px;">
             <canvas id="chart3" style="width: 100%; height: 100%;"></canvas>
@@ -370,5 +366,5 @@ base_template = """
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host=APP_IP, port=int(APP_PORT))
+    app.run(host="0.0.0.0", port=5000)
 
