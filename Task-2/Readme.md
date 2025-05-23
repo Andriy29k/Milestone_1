@@ -19,6 +19,7 @@ This pet project contain 3 SFTP servers, which communicate each other by log fil
 
 > Deploy with Docker:
 - Docker
+- Vagrant
 
 ### Environment variables setup and IP setting
 
@@ -31,12 +32,22 @@ IP ADRESSESS:
    you can setup your own ip addresses by doing changes in /Keys/peers.conf file. But commented line should be commented, in script from this line parse by grep URL to python app. Also, if you change python URL, you need to write this URL to app/.env file.
 
 # Deploying with Vagrant
-### Deploying infrastructure 
+### Creating local repository 
 
     $ git clone https://github.com/Andriy29k/Milestone_1.git
-    $ cd Task2
-    $ vagrant up
     
+### Creating SSH keys directory 
+
+    1. Go to `Task-2`.
+    2. Create `Keys` directory.
+    3. In `Keys` directory put your SSH key named `private-key` and public SSH key named `authorized_keys`.
+    4. Create Peers.conf with next template context:
+        192.168.33.10
+        192.168.33.10
+        192.168.33.10
+        #HOST_API=http://192.168.0.104:5000
+    5. Change these parameters and save file.
+
 ### Python application deploy
 
    Windows
@@ -61,12 +72,33 @@ IP ADRESSESS:
     $ pip install -r requirements.txt
 
 # Deploying with Docker
-### Deploying infrastructure
+### Creating local repository
 
     $ git clone https://github.com/Andriy29k/Milestone_1.git
-    $ cd Task2/Dockerized
-    $ docker-compose up --build
+
+### Creating SSH keys directory 
+
+    1. Go to `Task-2`.
+    2. Create `Keys` directory.
+    3. In `Keys` directory put your SSH key named `private-key` and public SSH key named `authorized_keys`.
+    4. Create Peers.conf with next template context:
+        192.168.33.10
+        192.168.33.10
+        192.168.33.10
+        #HOST_API=http://192.168.0.104:5000
+    5. Change these parameters and save file(!!!Important change `HOST_API` ip to your host IP).
     
+### Python application deploy
+In terminal execute:
+     
+     $ docker-compose up -d --build
+
+### Vagrant infrastructure deploy
+In terminal execute:
+
+     $ cd Task2
+     $ vagrant up
+
 ### Usage
 
    Go to application URL in browser. You should see main page with 6 buttons, which can redirect us to another routes.
