@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
             vm.vm.provision "shell" do |sftp|
                 sftp.inline = <<-SFTP
                     cp /vagrant/send-logs.sh /home/vagrant/send-logs.sh
-                    do2unix send-logs.sh
+                    dos2unix send-logs.sh
                     chmod +x /home/vagrant/send-logs.sh
                     chown vagrant:vagrant /home/vagrant/send-logs.sh
                   
