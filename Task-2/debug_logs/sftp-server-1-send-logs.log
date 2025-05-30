@@ -1,156 +1,0 @@
-dos2unix: converting file /home/vagrant/peers.conf to Unix format...
-Transfer to: 192.168.33.10
-Local: /data/store/uploads/sftp-server-1-2025-05-12_10-30.log
-Transfer to: 192.168.33.20
-Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
-sftp@192.168.33.20: Permission denied (publickey).
-Connection closed
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   2666  44000 --:--:-- --:--:-- --:--:-- 52500
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0122  1060  100    28  122  1269   9333   413k --:--:-- --:--:-- --:--:--  633k
-{"error":"No debug script"}
-Transfer to: 192.168.33.30
-ssh: connect to host 192.168.33.30 port 22: No route to host
-Connection closed
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   8000   128k --:--:-- --:--:-- --:--:--  136k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0112  1880  100    28  112  2089   9333   680k --:--:-- --:--:-- --:--:--  689k
-{"error":"No debug script"}
-dos2unix: converting file /home/vagrant/peers.conf to Unix format...
-Transfer to: 192.168.33.10
-Local: /data/store/uploads/sftp-server-1-2025-05-12_10-35.log
-Transfer to: 192.168.33.20
-Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.20.
-sftp> put "/tmp/tmp.fVWeG9OHN5" "/uploads/sftp-server-1-2025-05-12_10-35.log"
-Uploading /tmp/tmp.fVWeG9OHN5 to /uploads/sftp-server-1-2025-05-12_10-35.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   6000  99000 --:--:-- --:--:-- --:--:--  102k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0107  3050  100    28  107  3259   9333  1060k --:--:-- --:--:-- --:--:-- 1069k
-{"error":"No debug script"}
-Transfer to: 192.168.33.30
-Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.30.
-sftp> put "/tmp/tmp.FqCmidSLVK" "/uploads/sftp-server-1-2025-05-12_10-35.log"
-Uploading /tmp/tmp.FqCmidSLVK to /uploads/sftp-server-1-2025-05-12_10-35.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   6000  99000 --:--:-- --:--:-- --:--:--  102k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0105  4062  100    28  105  4271   9333  1390k --:--:-- --:--:-- --:--:-- 1399k
-{"error":"No debug script"}
-dos2unix: converting file /home/vagrant/peers.conf to Unix format...
-Transfer to: 192.168.33.10
-Local: /data/store/uploads/sftp-server-1-2025-05-12_10-40.log
-Transfer to: 192.168.33.20
-Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.20.
-sftp> put "/tmp/tmp.zqSoxBzQr0" "/uploads/sftp-server-1-2025-05-12_10-40.log"
-Uploading /tmp/tmp.zqSoxBzQr0 to /uploads/sftp-server-1-2025-05-12_10-40.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   6000  99000 --:--:-- --:--:-- --:--:--  102k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0104  5232  100    28  104  5441  14000  2656k --:--:-- --:--:-- --:--:-- 2670k
-{"error":"No debug script"}
-Transfer to: 192.168.33.30
-Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.30.
-sftp> put "/tmp/tmp.vrB5XYMDOK" "/uploads/sftp-server-1-2025-05-12_10-40.log"
-Uploading /tmp/tmp.vrB5XYMDOK to /uploads/sftp-server-1-2025-05-12_10-40.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   6000  99000 --:--:-- --:--:-- --:--:--  136k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0103  6244  100    28  103  6453   9333  2100k --:--:-- --:--:-- --:--:-- 2109k
-{"error":"No debug script"}
-dos2unix: converting file /home/vagrant/peers.conf to Unix format...
-Transfer to: 192.168.33.10
-Local: /data/store/uploads/sftp-server-1-2025-05-12_10-45.log
-Transfer to: 192.168.33.20
-Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.20.
-sftp> put "/tmp/tmp.RkegdBYz01" "/uploads/sftp-server-1-2025-05-12_10-45.log"
-Uploading /tmp/tmp.RkegdBYz01 to /uploads/sftp-server-1-2025-05-12_10-45.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.31.89 port 5000: Connection refused
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.31.89 port 5000: Connection refused
-Transfer to: 192.168.33.30
-Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.30.
-sftp> put "/tmp/tmp.WewknsRmbN" "/uploads/sftp-server-1-2025-05-12_10-45.log"
-Uploading /tmp/tmp.WewknsRmbN to /uploads/sftp-server-1-2025-05-12_10-45.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.31.89 port 5000: Connection refused
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.31.89 port 5000: Connection refused
-dos2unix: converting file /home/vagrant/peers.conf to Unix format...
-Transfer to: 192.168.33.10
-Local: /data/store/uploads/sftp-server-1-2025-05-12_10-50.log
-Transfer to: 192.168.33.20
-Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.20.
-sftp> put "/tmp/tmp.uzATodqlPe" "/uploads/sftp-server-1-2025-05-12_10-50.log"
-Uploading /tmp/tmp.uzATodqlPe to /uploads/sftp-server-1-2025-05-12_10-50.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   2666  44000 --:--:-- --:--:-- --:--:-- 46666
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0102  9867  100    28  102 10076   7000  2459k --:--:-- --:--:-- --:--:-- 3289k
-{"error":"No debug script"}
-Transfer to: 192.168.33.30
-Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
-Connected to 192.168.33.30.
-sftp> put "/tmp/tmp.W0Inpgj0oJ" "/uploads/sftp-server-1-2025-05-12_10-50.log"
-Uploading /tmp/tmp.W0Inpgj0oJ to /uploads/sftp-server-1-2025-05-12_10-50.log
-sftp> bye
-Uploading log to Flask...
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   420  100    24  100   396   6000  99000 --:--:-- --:--:-- --:--:--  136k
-{"status":"log stored"}
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0102 10879  100    28  102 11088   7000  2707k --:--:-- --:--:-- --:--:-- 3618k
-{"error":"No debug script"}
