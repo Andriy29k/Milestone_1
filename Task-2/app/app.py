@@ -10,9 +10,9 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 load_dotenv()
 
-APP_IP = os.getenv("APP_IP", "0.0.0.0")
-APP_PORT = os.getenv("APP_PORT", "5000")
-MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017/")
+APP_IP = "192.168.0.104"
+APP_PORT = "5000"
+MONGO_URL = "mongodb://localhost:27017/"
 
 
 client = MongoClient(MONGO_URL)
@@ -364,7 +364,7 @@ base_template = """
             {{ content|safe }}
         </div>
     </div>
-</body>
+</body>`
 </html>
 """
 

@@ -1,0 +1,58 @@
+/bin/sh: 1: /home/vagrant/send-logs.sh: not found
+/bin/sh: 1: /home/vagrant/send-logs.sh: not found
+/bin/sh: 1: /home/vagrant/send-logs.sh: not found
+/bin/sh: 1: /home/vagrant/send-logs.sh: not found
+dos2unix: converting file /home/vagrant/peers.conf to Unix format...
+Transfer to: 192.168.33.10
+Local: /data/store/uploads/sftp-server-1-2025-05-29_18-20.log
+Transfer to: 192.168.33.20
+Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
+Load key "/home/vagrant/.ssh/ed25519": invalid format
+sftp@192.168.33.20: Permission denied (publickey).
+Connection closed
+Uploading log to Flask...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (7) Failed to connect to 192.168.33.10 port 5000: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (7) Failed to connect to 192.168.33.10 port 5000: Connection refused
+Transfer to: 192.168.33.30
+Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
+Load key "/home/vagrant/.ssh/ed25519": invalid format
+sftp@192.168.33.30: Permission denied (publickey).
+Connection closed
+Uploading log to Flask...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (7) Failed to connect to 192.168.33.10 port 5000: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (7) Failed to connect to 192.168.33.10 port 5000: Connection refused
+dos2unix: converting file /home/vagrant/peers.conf to Unix format...
+Transfer to: 192.168.33.10
+Local: /data/store/uploads/sftp-server-1-2025-05-29_18-25.log
+Transfer to: 192.168.33.20
+Warning: Permanently added '192.168.33.20' (ECDSA) to the list of known hosts.
+Load key "/home/vagrant/.ssh/ed25519": invalid format
+sftp@192.168.33.20: Permission denied (publickey).
+Connection closed
+Uploading log to Flask...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.0.104 port 5000: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.0.104 port 5000: Connection refused
+Transfer to: 192.168.33.30
+Warning: Permanently added '192.168.33.30' (ECDSA) to the list of known hosts.
+Load key "/home/vagrant/.ssh/ed25519": invalid format
+sftp@192.168.33.30: Permission denied (publickey).
+Connection closed
+Uploading log to Flask...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.0.104 port 5000: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0curl: (7) Failed to connect to 192.168.0.104 port 5000: Connection refused
